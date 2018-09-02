@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<html>
-<head>
-<script src="${context}/resources/js/app.js"></script>
-</head>
-<body>
 <div id="content-box">
 	<form id="updateForm" name="updateForm">
 	<table>
@@ -14,7 +9,7 @@
 			</td>
 			
 			<td>아이디</td>
-			<td colspan="2">${usert}</td>
+			<td colspan="2">${user.memberId}</td>
 			<%-- <td colspan="2">${user.memberId}</td> --%>
 		</tr>
 		<tr>
@@ -63,6 +58,11 @@
   <input type="submit" value="파일업로드">
 </form>
 <script>
+$(memberId).text("${user.memberId}");
+$(namet).text("${user.name}");
+$(age).text("${user.age}");
+$(teamId).text("${user.teamId}");
+$(gender).text("${user.gender}");
+$(roll).text("${user.roll}");
 </script>
-</body> 
-</html>
+

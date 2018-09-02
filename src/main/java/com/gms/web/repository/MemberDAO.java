@@ -9,7 +9,7 @@ public interface MemberDAO {
 	public void insert(MemberDTO p);
 	public List<?> selectList(Map<?,?>p);
 	public List<?> selectSome(Map<?,?>p);
-	public MemberDTO selectOne(Map<?,?>p);
+	public MemberDTO selectOne(MemberDTO p);
 	public int count(Map<?,?>p);
 	public void update(Map<?,?>p);
 	public void remove(MemberDTO p);

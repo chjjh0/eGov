@@ -33,10 +33,10 @@ app = {
 			});
 			$('#login_btn').click(()=>{
 				alert('Login Succes!!!');
-				location.href = app.x()+"/member/login/"
-				+document.loginForm.memberId.value
-				+"/"
-				+document.loginForm.pass.value;
+				$('#loginForm').attr({
+				    action:app.x()+"/member/login",
+				    method:"POST"
+				}).submit();
 			});
 			/* logout */
 			$('#logout').click(()=>{

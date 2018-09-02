@@ -37,7 +37,7 @@ public class MemberMapper implements MemberDAO{
 	}
 
 	@Override
-	public MemberDTO selectOne(Map<?, ?> p) {
+	public MemberDTO selectOne(MemberDTO p) {
 		System.out.println("MemberMapper_selectOne");
 		SqlSession sqlSession = factory.openSession();
 		return (MemberDTO) sqlSession.selectOne(ns+".selectOne",p);

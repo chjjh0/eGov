@@ -1,25 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<script> 
-String s = "${user.memberId}";
-session.setAttribute("usert", s);
-</script>
 <div id="content-box">
-<html>
-<head>
-<script src="${context}/resources/js/app.js"></script>
-</head>
-<body>
 	<table>
 		<tr>
 			<td rowspan="3">
 				<img id="profile" src="${img}${profile}" />
 			</td>
 			<td>아이디</td>
-			<td id="retrieveMemberId" colspan="2">${user.memberId}</td>
+			<td id="memberId" colspan="2"></td>
 		</tr>
 		<tr>
 			<td>이름</td>
-			<td colspan="2">${user.name}</td>
+			<td id="namet" colspan="2"></td>
 		</tr>
 		<tr>
 			<td><a>비밀번호</a></td>
@@ -27,15 +18,15 @@ session.setAttribute("usert", s);
 		</tr>
 		<tr>
 			<td>나이</td>
-			<td>${user.age}</td>
+			<td id="age"></td>
 			<td><a>팀명</a></td>
-			<td>${user.teamId}</td>
+			<td id="teamId"></td>
 		</tr>
 		<tr>
 		<td>성별</td>
-		<td>${user.gender}</td>
+		<td id="gender"></td>
 		<td><a>역활</a></td>
-		<td>${user.roll}</td>
+		<td id="roll"></td>
 		</tr>
 	</table>
 		<a id="moveUpdateForm">정보수정</a> &nbsp; &nbsp; &nbsp;
@@ -43,7 +34,11 @@ session.setAttribute("usert", s);
 		<a id="logout">로그아웃</a>
 </div>
 <script>
+$(memberId).text("${user.memberId}");
+$(namet).text("${user.name}");
+$(age).text("${user.age}");
+$(teamId).text("${user.teamId}");
+$(gender).text("${user.gender}");
+$(roll).text("${user.roll}");
 app.user.set('${user.memberId}');
 </script>
-</body>
-</html>
