@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="public" template="/WEB-INF/views/common/main.jsp">
+		<put-attribute name="navi" value="/WEB-INF/views/common/navi.jsp"/>
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/common/content.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+	</definition>
+	<definition name="public:*/*.tiles" extends="public">
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="login:*/*.tiles" extends="public">
+		<put-attribute name="header" value=""/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="retrieve:*/*.tiles" extends="public">
+		<put-attribute name="header" value=""/>
+		<put-attribute name="navi" value="/WEB-INF/views/{1}/navi.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="join:*/*.tiles" extends="public">
+		<put-attribute name="header" value=""/>
+		<put-attribute name="navi" value="/WEB-INF/views/{1}/navi.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="modify:*/*.tiles" extends="public">
+		<put-attribute name="header" value=""/>
+		<put-attribute name="navi" value="/WEB-INF/views/{1}/navi.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="remove:*/*.tiles" extends="public">
+		<put-attribute name="header" value=""/>
+		<put-attribute name="navi" value="/WEB-INF/views/{1}/navi.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="search:*/*.tiles" extends="public">
+		<put-attribute name="header" value=""/>
+		<put-attribute name="navi" value="/WEB-INF/views/{1}/search_navi.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+</tiles-definitions>
